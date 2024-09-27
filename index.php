@@ -2,7 +2,7 @@
 /*
 ## Example of a line of raw HYDRO code in format KN-15
 
-### Change the variable ыавываыва to get the result.
+### Change the variable raw to get the result.
 ### The variable raw has the format KN-15.
 */
 
