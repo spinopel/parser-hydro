@@ -13,7 +13,7 @@ http://dev.hsdn.org/wdparser/metar/
 
 class HydroConv extends Hydro
 {
-	//echo "<br><br>Дата получения данных<br>";
+	//echo "Дата получения данных"."\n";
 	private function convDate($d_day) {
 		date_default_timezone_set('UTC'); //временная зона по умолчанию
 		if (isset($d_day) && (($d_day * 1) <= 31)) {
@@ -27,7 +27,7 @@ class HydroConv extends Hydro
 		return $date_chg;
 	}
 	
-	//echo "<br>Срок наблюдения, UTC<br>";
+	//echo "\n"."Срок наблюдения, UTC"."\n";
 	private function convTime($d_hour) {
 		if (isset($d_hour) && (($d_hour * 1) <= 23)) {
 			$date_time_format = $d_hour.":00:00";			
@@ -42,14 +42,14 @@ class HydroConv extends Hydro
 
 	//Пост обработка результатов, полученных из родительского класса
 	public function convParam() {
-		//echo "<br><br>Дата получения данных<br>";
+		//echo "\n"."Дата получения данных"."\n";
 		$this->observed_date = $this->convDate($this->dayr);
 
-		//echo "<br>Срок наблюдения, UTC<br>";
+		//echo "\n"."Срок наблюдения, UTC"."\n";
 		$this->observed_time = $this->convTime($this->hour_obs);
 
 		//Дата и время в классическом формате
-		//echo "<br>Дата и время<br>";
+		//echo "\n"."Дата и время"."\n";
 		if (isset($this->observed_date, $this->observed_time)) {
 			$this->observed_date_time = $this->observed_date." ".$this->observed_time;
 		}
